@@ -4,6 +4,19 @@ defmodule LaniWeb.UserController do
   alias Lani.Accounts
   alias Lani.Accounts.User
 
+  plug :authenticate when action in [:index, :show]
+
+  defp authenticate(conn, _opts) do
+    if conn.assigns.current_user do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You must be logged in to access that page")
+      |> redirect(to: Routes.page_path(conn, :index))
+      |> halt()
+    end
+  end
+
   def index(conn, _params) do
     users = Accounts.list_users()
     render(conn, "index.html", users: users)
@@ -18,6 +31,7 @@ defmodule LaniWeb.UserController do
     case Accounts.register_user(user_params) do
       {:ok, user} ->
         conn
+        |> LaniWeb.Auth.login(user)
         |> put_flash(:info, "User created successfully.")
         |> redirect(to: Routes.user_path(conn, :show, user))
       {:error, %Ecto.Changeset{} = changeset} ->

@@ -9,7 +9,7 @@
                         'Elixir.Lani.Accounts.Credential',
                         'Elixir.Lani.Accounts.User','Elixir.Lani.Application',
                         'Elixir.Lani.Repo','Elixir.LaniWeb',
-                        'Elixir.LaniWeb.Endpoint',
+                        'Elixir.LaniWeb.Auth','Elixir.LaniWeb.Endpoint',
                         'Elixir.LaniWeb.ErrorHelpers',
                         'Elixir.LaniWeb.ErrorView','Elixir.LaniWeb.Gettext',
                         'Elixir.LaniWeb.LayoutView',
