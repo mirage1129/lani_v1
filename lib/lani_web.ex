@@ -21,7 +21,7 @@ defmodule LaniWeb do
     quote do
       use Phoenix.Controller, namespace: LaniWeb
       import Plug.Conn
-      import LaniWeb.Router.Helpers
+      alias LaniWeb.Router.Helpers, as: Routes
       import LaniWeb.Gettext
     end
   end
@@ -37,7 +37,7 @@ defmodule LaniWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import LaniWeb.Router.Helpers
+      alias LaniWeb.Router.Helpers, as: Routes
       import LaniWeb.ErrorHelpers
       import LaniWeb.Gettext
     end
