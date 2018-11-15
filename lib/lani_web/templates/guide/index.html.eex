@@ -1,40 +1,24 @@
-<h2>Listing Guides</h2>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Starting location</th>
-      <th>Image url</th>
-      <th>Cost</th>
-      <th>Bring</th>
-      <th>Intensity</th>
-      <th>Map link</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for guide <- @guides do %>
-    <tr>
-      <td><%= guide.name %></td>
-      <td><%= guide.description %></td>
-      <td><%= guide.starting_location %></td>
-      <td><%= guide.image_url %></td>
-      <td><%= guide.cost %></td>
-      <td><%= guide.bring %></td>
-      <td><%= guide.intensity %></td>
-      <td><%= guide.map_link %></td>
-
-      <td class="text-right">
-        <span><%= link "Show", to: Routes.guide_path(@conn, :show, guide), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<div class="tile is-ancestor">
+  <div class="tile is-vertical">
+    <div class="tile">
+      <%= for guide <- @guides do %>
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-primary">
+            <p class="title"><%= guide.name %></p>
+            <figure class="image is-2by1">
+              <a href="/guides/<%= guide.id %>">
+                <img src="<%= guide.image_url %>" alt="Placeholder image">
+              </a>
+            </figure>
+            <span><%= link "Show", to: Routes.guide_path(@conn, :show, guide), class: "btn btn-default btn-xs" %></span>
+            <span><%= link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "btn btn-default btn-xs" %></span>
+            <span><%= link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+          </article>
+        </div>
+      <% end %>
+    </div>
+  </div>      
+</div>
+  
 
 <span><%= link "New Guide", to: Routes.guide_path(@conn, :new) %></span>
