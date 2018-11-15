@@ -1,21 +1,9 @@
-<div class="tile is-ancestor">
-  <div class="tile is-vertical">
-    <div class="tile">
-      <%= for guide <- @guides do %>
-        <div class="tile is-parent is-vertical">
-          <article class="tile is-child notification is-primary">
-            <p class="title"><%= guide.name %></p>
-            <figure class="image is-2by1">
-              <a href="/guides/<%= guide.id %>">
-                <img src="<%= guide.image_url %>" alt="Placeholder image">
-              </a>
-            </figure>
-            <span><%= link "Show", to: Routes.guide_path(@conn, :show, guide), class: "btn btn-default btn-xs" %></span>
-            <span><%= link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "btn btn-default btn-xs" %></span>
-            <span><%= link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-          </article>
-        </div>
-      <% end %>
+<section class="hero is-fullheight-with-navbar" style="background: url('https://scontent-sin2-2.xx.fbcdn.net/v/t1.0-9/35066169_374131173080407_8454439085459636224_o.jpg?_nc_cat=102&_nc_ht=scontent-sin2-2.xx&oh=2cd84144c60383b4b88ac2323f47ff4f&oe=5C678A45') center; background-size:cover; opacity: 0.8;">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title picture-title has-text-white is-uppercase has-text-weight-bold">Fit.Fun.Friends.</h1>
+      <h2 class="subtitle has-text-primary is-size-1 has-text-weight-bold has-background-light">Lani is an outdoors club that introduces you to new faces and places</h1>
+      <a href="http://m.me/214001225760070" class="button is-primary is-large is-focused">Chat with Lani</a>
     </div>
-  </div>      
-</div>
+  </div>
+</section>

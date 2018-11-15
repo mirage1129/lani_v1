@@ -17,7 +17,7 @@
       <header class="header">
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
-            <a class="navbar-item" href="http://whoislani.com/">
+            <a class="navbar-item" href="/">
               <img src="https://lh3.googleusercontent.com/Zqzn2lAe5fI4FDqd2USdw0omiGCvsvodG1QggSyKrQRiLipNidDdqA1B-oQkPMlWe-7BWJe4tKq_s5196mVJhiORg2IEWdEqOZ49zKF04wLdLPi74r6b5WaapSitudsl3Fjv7H46xajXSYxHp7pbk8RtlEnwuLeTnaJtDqGHIygOgwhHmrLDaQno1PBnZKG6QL2x5xjwXX_cvGbMM0eoLnYoNn2yA2QnQ4bK12yhU7vsdtPbCg3a0Fjxqkfv48zUfJTqsKmMuAxm2wg6PkKdIgfkkfnOTbTWr46RZ9U11YDa6zfgOZTuB6Fsd0IuHxOw_RQLe678BHHgxsb1GOYdSwRFtfOR2BILssnZr2WNfPZ4iBzxMv4XEPFSqbnOFoBLS1XAUkU0VeGHeGD8-__6uXLOpK-aArz8pZailhUef5nrNRSpQG8GP-voI6yXreuK0oZoQXcaBZq0psOkHxwDZt98jj58z4VAUWNBpwKPhqeC3ngZiNjlSLupNho8Ghti4RTvEXeeZ0jSx-wschSO4orEfKtIB055QJxGn2hgg0s45AbGzKXz9pUOWHS1R6uS6_6ZZHqYfRNqaF0bgv_Fy-TXYlvjvD9gNYqiacwQxftItxpO4qw5r_jBVt_6vUIMQU0xsO_BNzDOhtzygkuVGYCihwkGBO407UwaaNQKDc4kZ1xADhvHI4tWvACCrKDcMT5zxZjhoiKnOlOvWxYRLQiJTH6O4I4E1N4Wow=w1146-h600-no" width="80" height="28">
             </a>
 
@@ -30,8 +30,8 @@
 
           <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-              <a class="navbar-item has-text-primary has-text-weight-bold">
-                Link 1
+              <a href= "/guides"class="navbar-item has-text-primary has-text-weight-bold">
+                Guides
               </a>
 
               <a class="navbar-item has-text-primary has-text-weight-bold">
