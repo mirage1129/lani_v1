@@ -1,0 +1,16 @@
+<nav class="level">
+
+  <%= for guide <- @guides do %>
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-2by1">
+          <img src="<%= guide.image_url %>" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <p class="title is-4"><%= guide.name %></p>
+      </div>
+    </div>
+  <% end %>
+  
+</nav>

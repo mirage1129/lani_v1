@@ -1,0 +1,50 @@
+<section class="hero is-fullheight-with-navbar" style="background: url('<%= @guide.image_url %>') center; background-size:cover; opacity: 0.8;">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title picture-title has-text-white is-size-1 is-uppercase has-text-weight-bold"><%= @guide.name %></h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-danger">
+          <p class="title"><%= @guide.description %></p>
+          <div class="content">
+            <!-- Content -->
+          </div>
+        </article>
+      </div>
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-info">
+            <p class="title">Guide</p>
+            <iframe src="<%= @guide.map_link %>" width="640" height="480"></iframe>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success">
+        <div class="content">
+          <p class="title">Details</p>
+            <p class="subtitle"><b>Cost: </b><%= @guide.cost %></p>
+            <p class="subtitle"><b>Starting location: </b><%= @guide.starting_location %></p>
+            <p class="subtitle"><b>Intensity: </b><%= @guide.intensity %></p>
+            <p class="subtitle"><b>Bring: </b><%= @guide.bring %></p>
+          <div class="content">
+            <!-- Content -->
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+
+<span><%= link "Edit", to: Routes.guide_path(@conn, :edit, @guide) %></span>
+<span><%= link "Back", to: Routes.guide_path(@conn, :index) %></span>
