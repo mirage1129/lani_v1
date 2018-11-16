@@ -1,3 +1,8 @@
+<div>
+<%= link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused" %>
+</div>
+<br>
+
 <div class="tile is-ancestor">
   <div class="tile is-vertical">
     <div class="tile">
@@ -19,6 +24,3 @@
     </div>
   </div>      
 </div>
-  
-
-<span><%= link "New Guide", to: Routes.guide_path(@conn, :new) %></span>

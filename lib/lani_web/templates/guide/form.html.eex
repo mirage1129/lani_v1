@@ -5,55 +5,76 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :name, class: "control-label" %>
-    <%= text_input f, :name, class: "form-control" %>
-    <%= error_tag f, :name %>
+  <div class="field">
+    <p class="control">
+      <%= label f, :name, class: "control-label" %>
+      <%= text_input f, :name, class: "form-control input" %>
+      <%= error_tag f, :name %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= label f, :description, class: "control-label" %>
+      <%= textarea f, :description, class: "form-control textarea" %>
+      <%= error_tag f, :description %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= label f, :starting_location, class: "control-label" %>
+      <%= text_input f, :starting_location, class: "form-control input" %>
+      <%= error_tag f, :starting_location %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= label f, :image_url, class: "control-label" %>
+      <%= text_input f, :image_url, class: "form-control input" %>
+      <%= error_tag f, :image_url %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= label f, :cost, class: "control-label" %>
+      <%= text_input f, :cost, class: "form-control input" %>
+      <%= error_tag f, :cost %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= label f, :bring, class: "control-label" %>
+      <%= text_input f, :bring, class: "form-control input" %>
+      <%= error_tag f, :bring %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= label f, :intensity, class: "control-label" %>
+      <%= text_input f, :intensity, class: "form-control input" %>
+      <%= error_tag f, :intensity %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= label f, :map_link, class: "control-label" %>
+      <%= text_input f, :map_link, class: "form-control input" %>
+      <%= error_tag f, :map_link %>
+    </p>
   </div>
 
   <div class="form-group">
-    <%= label f, :description, class: "control-label" %>
-    <%= textarea f, :description, class: "form-control" %>
-    <%= error_tag f, :description %>
+    <p class="control">
+      <button class="button is-primary">
+        Boom
+      </button>
+    </p>
   </div>
-
-  <div class="form-group">
-    <%= label f, :starting_location, class: "control-label" %>
-    <%= text_input f, :starting_location, class: "form-control" %>
-    <%= error_tag f, :starting_location %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :image_url, class: "control-label" %>
-    <%= text_input f, :image_url, class: "form-control" %>
-    <%= error_tag f, :image_url %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :cost, class: "control-label" %>
-    <%= text_input f, :cost, class: "form-control" %>
-    <%= error_tag f, :cost %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :bring, class: "control-label" %>
-    <%= text_input f, :bring, class: "form-control" %>
-    <%= error_tag f, :bring %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :intensity, class: "control-label" %>
-    <%= text_input f, :intensity, class: "form-control" %>
-    <%= error_tag f, :intensity %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :map_link, class: "control-label" %>
-    <%= text_input f, :map_link, class: "form-control" %>
-    <%= error_tag f, :map_link %>
-  </div>
-
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
-  </div>
+  
 <% end %>

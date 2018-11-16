@@ -47,8 +47,8 @@
   
   <div class="form-group">
     <p class="control">
-      <button class="button is-success">
-        Register
+      <button class="button is-primary">
+        Boom
       </button>
     </p>
   </div>
