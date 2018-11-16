@@ -7,9 +7,12 @@ defmodule Lani.Accounts.User do
   schema "users" do
     field :name, :string
     field :username, :string
+    field :role, :string
     has_one :credential, Credential
     timestamps()
   end
+
+  @optional_fields ~w(role)
 
   def registration_changeset(user, attrs) do
     user

@@ -9,3 +9,12 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alias Lani.Repo
+ alias Lani.Accounts.User
+
+Repo.insert! %User{
+  name: "test1",
+  username: "test1"
+  # role: "Editor"
+}

@@ -5,7 +5,6 @@ defmodule LaniWeb.PageController do
   alias Lani.Events.Guide
 
   def index(conn, _params) do
-    guides = Events.list_guides()
-    render(conn, "index.html", guides: guides)
+    render(conn, "index.html")
   end
 end

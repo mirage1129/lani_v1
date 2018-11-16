@@ -33,7 +33,7 @@ defmodule LaniWeb.UserController do
         conn
         |> LaniWeb.Auth.login(user)
         |> put_flash(:info, "User created successfully.")
-        |> redirect(to: Routes.user_path(conn, :show, user))
+        |> redirect(to: Routes.guide_path(conn, :index))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

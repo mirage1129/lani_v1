@@ -1,26 +1,36 @@
-<h2>Listing Users</h2>
+<section class="section">
+  <div class="container">
+    <h1 class="title is-1 has-text-primary">Users</h1>
+    <div>
+      <%= link "New User", to: Routes.user_path(@conn, :new), class: "button is-primary" %>
+      </div>
+      <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Role</th>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Username</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for user <- @users do %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.username %></td>
+            <td><%= user.role %></td>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for user <- @users do %>
-    <tr>
-      <td><%= user.name %></td>
-      <td><%= user.username %></td>
+            <td class="text-right">
+              <span><%= link "Show", to: Routes.user_path(@conn, :show, user), class: "button is-primary" %></span>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-      <td class="text-right">
-        <span><%= link "Show", to: Routes.user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
 
-<span><%= link "New User", to: Routes.user_path(@conn, :new) %></span>
+
