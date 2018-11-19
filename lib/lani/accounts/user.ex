@@ -6,7 +6,6 @@ defmodule Lani.Accounts.User do
 
   schema "users" do
     field :name, :string
-    field :username, :string
     field :role, :string
     has_one :credential, Credential
     timestamps()
@@ -22,9 +21,8 @@ defmodule Lani.Accounts.User do
 
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :username])
-    |> validate_required([:name, :username])
-    |> validate_length(:username, min: 1, max: 20)
+    |> cast(attrs, [:name, :role])
+    |> validate_required([:name])
   end
 
 end

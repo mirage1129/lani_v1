@@ -1,17 +1,15 @@
-<h2>Show User</h2>
-
-<ul>
-
-  <li>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </li>
-
-  <li>
-    <strong>Username:</strong>
-    <%= @user.username %>
-  </li>
-
-</ul>
-
-<span><%= link "Back", to: Routes.user_path(@conn, :index) %></span>
+<section class="section">
+  <div class="container">
+    <h1 class="title is-1 has-text-primary">User</h1>
+    <ul>
+		  <li>
+		    <strong>Name:</strong>
+		    <%= @user.name %>
+		  </li>
+		  <li>
+		    <strong>Role:</strong>
+		    <%= @user.role %>
+		  </li>
+		</ul>
+  </div>
+</section>

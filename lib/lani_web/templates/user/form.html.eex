@@ -13,13 +13,6 @@
     </p>
   </div>
 
-  <div class="field">
-    <p class="control">
-      <%= text_input f, :username, class: "form-control input", placeholder: "Username" %>
-      <%= error_tag f, :username %>
-    </p>
-  </div>
-
   <div>
     <%= inputs_for f, :credential, fn cf -> %>
       <div class="field">

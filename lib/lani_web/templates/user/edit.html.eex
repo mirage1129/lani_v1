@@ -1,5 +1,14 @@
-<h2>Edit User</h2>
+<section class="section">
+  <div class="container">
+    <h1 class="title is-1 has-text-primary">Edit Priviliges</h1>
+    <ul>
+		  <li>
+		    <strong>Name:</strong>
+		    <%= @user.name %>
+		  </li>
+		    <%= render "priviliges.html", Map.put(assigns, :action, Routes.user_path(@conn, :update, @user)) %>
+		</ul> 
+  </div>
+</section>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.user_path(@conn, :update, @user)) %>
 
-<span><%= link "Back", to: Routes.user_path(@conn, :index) %></span>

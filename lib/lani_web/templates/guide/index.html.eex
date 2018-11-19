@@ -1,26 +1,39 @@
-<div>
-<%= link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused" %>
-</div>
-<br>
-
-<div class="tile is-ancestor">
-  <div class="tile is-vertical">
-    <div class="tile">
-      <%= for guide <- @guides do %>
-        <div class="tile is-parent is-vertical">
-          <article class="tile is-child notification is-primary">
-            <p class="title"><%= guide.name %></p>
-            <figure class="image is-2by1">
-              <a href="/guides/<%= guide.id %>">
-                <img src="<%= guide.image_url %>" alt="Placeholder image">
-              </a>
-            </figure>
-            <br>
-            <span><%= link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary is-inverted is-outlined" %></span>
-            <span><%= link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary is-inverted is-outlined" %></span>
-          </article>
-        </div>
-      <% end %>
+<section class="section">
+  
+  <div class="container">
+    <h1 class="title is-1 has-text-primary">Guides</h1>
+    <div>
+      <%= link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused" %>
     </div>
-  </div>      
-</div>
+    <br>
+  </div>
+
+  <div class="container">
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical">
+        <div class="tile">
+          <%= for guide <- @guides do %>
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-primary">
+                <p class="title"><%= guide.name %></p>
+                <figure class="image is-2by1">
+                  <a href="/guides/<%= guide.id %>">
+                    <img src="<%= guide.image_url %>" alt="Placeholder image">
+                  </a>
+                </figure>
+                <br>
+                <span><%= link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary is-inverted is-outlined" %></span>
+                <span><%= link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary is-inverted is-outlined" %></span>
+              </article>
+            </div>
+          <% end %>
+        </div>
+      </div>      
+    </div>
+  </div>
+</section>
+
+
+
+
+
