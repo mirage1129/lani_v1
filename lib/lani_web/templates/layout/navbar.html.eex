@@ -16,10 +16,9 @@
       <div class="navbar-start">
         <%= link "Guides", to: Routes.guide_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold" %>
         <div class="navbar-item has-dropdown is-hoverable">
-          <%= link "About", to: Routes.user_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold" %>
+          <%= link "About", to: Routes.page_path(@conn, :show), class: "navbar-item has-text-primary has-text-weight-bold" %>
           <div class="navbar-dropdown">
-            <a class="navbar-item">
-              Our Story
+             <%= link "Our Story", to: Routes.page_path(@conn, :show), class: "navbar-item" %>
             </a>
             <a class="navbar-item" href="https://www.facebook.com/whoislani/">
               Facebook
