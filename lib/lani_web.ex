@@ -21,8 +21,9 @@ defmodule LaniWeb do
     quote do
       use Phoenix.Controller, namespace: LaniWeb
       import Plug.Conn
-      alias LaniWeb.Router.Helpers, as: Routes
       import LaniWeb.Gettext
+      import LaniWeb.Auth, only: [authenticate_admin: 2]
+      alias LaniWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -37,9 +38,9 @@ defmodule LaniWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      alias LaniWeb.Router.Helpers, as: Routes
       import LaniWeb.ErrorHelpers
       import LaniWeb.Gettext
+      alias LaniWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -48,6 +49,7 @@ defmodule LaniWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import LaniWeb.Auth, only: [authenticate_admin: 2]
     end
   end
 

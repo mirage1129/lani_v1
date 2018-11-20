@@ -1,0 +1,65 @@
+<div class="container">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="https://lh3.googleusercontent.com/Zqzn2lAe5fI4FDqd2USdw0omiGCvsvodG1QggSyKrQRiLipNidDdqA1B-oQkPMlWe-7BWJe4tKq_s5196mVJhiORg2IEWdEqOZ49zKF04wLdLPi74r6b5WaapSitudsl3Fjv7H46xajXSYxHp7pbk8RtlEnwuLeTnaJtDqGHIygOgwhHmrLDaQno1PBnZKG6QL2x5xjwXX_cvGbMM0eoLnYoNn2yA2QnQ4bK12yhU7vsdtPbCg3a0Fjxqkfv48zUfJTqsKmMuAxm2wg6PkKdIgfkkfnOTbTWr46RZ9U11YDa6zfgOZTuB6Fsd0IuHxOw_RQLe678BHHgxsb1GOYdSwRFtfOR2BILssnZr2WNfPZ4iBzxMv4XEPFSqbnOFoBLS1XAUkU0VeGHeGD8-__6uXLOpK-aArz8pZailhUef5nrNRSpQG8GP-voI6yXreuK0oZoQXcaBZq0psOkHxwDZt98jj58z4VAUWNBpwKPhqeC3ngZiNjlSLupNho8Ghti4RTvEXeeZ0jSx-wschSO4orEfKtIB055QJxGn2hgg0s45AbGzKXz9pUOWHS1R6uS6_6ZZHqYfRNqaF0bgv_Fy-TXYlvjvD9gNYqiacwQxftItxpO4qw5r_jBVt_6vUIMQU0xsO_BNzDOhtzygkuVGYCihwkGBO407UwaaNQKDc4kZ1xADhvHI4tWvACCrKDcMT5zxZjhoiKnOlOvWxYRLQiJTH6O4I4E1N4Wow=w1146-h600-no" width="80" height="28">
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <%= link "Guides", to: Routes.guide_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold" %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link "About", to: Routes.user_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold" %>
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              Our Story
+            </a>
+            <a class="navbar-item" href="https://www.facebook.com/whoislani/">
+              Facebook
+            </a>
+            <a class="navbar-item" href="https://www.instagram.com/wh0islani/">
+              Instagram
+            </a>
+          </div>
+        </div>
+
+        <%= if @current_user do %>
+
+          <%= case @current_user.role do
+            "admin" -> link "Users", to: Routes.user_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold"
+            _ -> ""
+            end %>
+          <% end %>              
+      </div>
+
+
+      <%= if @current_user do %>
+
+        <div class="navbar-end">
+          <div class="navbar-item has-text-primary has-text-weight-bold">
+            <%= @current_user.name %>
+          </div>
+          <div class="navbar-item has-text-primary has-text-weight-bold">
+            <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
+          </div>
+        </div>
+    
+      <% else %>
+          <div class="navbar-end">
+          <div class="navbar-item">
+            <%= link "Register", to: Routes.user_path(@conn, :new) %>
+          </div>
+          <div class="navbar-item">
+            <%= link "Log in", to: Routes.session_path(@conn, :new) %>
+          </div>
+      <% end %>
+    </div>    
+  </nav> 
+</div>
