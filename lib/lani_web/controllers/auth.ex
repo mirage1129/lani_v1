@@ -42,4 +42,16 @@ defmodule LaniWeb.Auth do
     end
   end
 
+  def authenticate_editor(conn, _opts) do
+    case conn.assigns.current_user.role do
+      "editor" -> conn
+      "admin" -> conn
+      _ ->
+      conn
+      |> put_flash(:error, "You must be an editor to access that page")
+      |> redirect(to: Routes.page_path(conn, :index))
+      |> halt()
+    end
+  end
+
 end

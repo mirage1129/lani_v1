@@ -36,7 +36,7 @@
             "admin" -> link "Users", to: Routes.user_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold"
             _ -> ""
             end %>
-          <% end %>              
+        <% end %>              
       </div>
 
 
