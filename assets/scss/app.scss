@@ -1,10 +1,29 @@
 /* This file is for your main application css. */
 
+@charset "utf-8";
+
+// Import fonts
+@import url('https://fonts.googleapis.com/css?family=Baumans:300,400,500,600,700');
+
+// override bulma
+$header-family:Baumans;
+
+.navbar-item, .navbar-link, {
+  font-family: $header-family;
+  font-weight: 700;
+}
+
 @import 'bulma';
 
-
 .picture-title {
-	font-size: 120px;	
+	font-size: 120px;
+  text-shadow:
+    -2px -2px 0 #22D0B2,
+    2px -2px 0 #22D0B2,
+    -2px 2px 0 #22D0B2,
+    2px 2px 0 #22D0B2;
+
+
 }
 
 #toast {
@@ -19,4 +38,8 @@
     box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.05);
     /*font-family: $header-family;*/
   }
+}
+
+.logo {
+  margin-right: 10px;
 }

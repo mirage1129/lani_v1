@@ -1,7 +1,7 @@
 <section class="hero is-fullheight-with-navbar" style="background: url('<%= @guide.image_url %>') center; background-size:cover; opacity: 0.8;">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title picture-title has-text-white is-size-1 is-uppercase has-text-weight-bold"><%= @guide.name %></h1>
+      <h1 class="title picture-title has-text-white is-uppercase has-text-weight-bold"><%= @guide.name %></h1>
     </div>
   </div>
 </section>
