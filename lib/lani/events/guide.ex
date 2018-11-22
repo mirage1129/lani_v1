@@ -13,13 +13,15 @@ defmodule Lani.Events.Guide do
     field :name, :string
     field :starting_location, :string
 
+    belongs_to :category, Lani.Events.Category
+
     timestamps()
   end
 
   @doc false
   def changeset(guide, attrs) do
     guide
-    |> cast(attrs, [:name, :description, :starting_location, :image_url, :cost, :bring, :intensity, :map_link])
+    |> cast(attrs, [:name, :description, :starting_location, :image_url, :cost, :bring, :intensity, :map_link, :category_id])
     |> validate_required([:name, :description, :starting_location, :image_url, :cost, :bring, :intensity, :map_link])
   end
 end

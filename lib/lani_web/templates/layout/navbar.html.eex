@@ -35,6 +35,11 @@
             "admin" -> link "Users", to: Routes.user_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold"
             _ -> ""
             end %>
+
+          <%= case @current_user.role do
+            "admin" -> link "Admin", to: Routes.admin_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold"
+            _ -> ""
+            end %>
         <% end %>              
       </div>
 
@@ -53,10 +58,10 @@
       <% else %>
           <div class="navbar-end">
           <div class="navbar-item">
-            <%= link "Register", to: Routes.user_path(@conn, :new) %>
+            <%= link "Register", to: Routes.user_path(@conn, :new), class: "navbar-item has-text-primary has-text-weight-bold" %>
           </div>
           <div class="navbar-item">
-            <%= link "Log in", to: Routes.session_path(@conn, :new) %>
+            <%= link "Log in", to: Routes.session_path(@conn, :new), class: "navbar-item has-text-primary has-text-weight-bold" %>
           </div>
       <% end %>
     </div>    

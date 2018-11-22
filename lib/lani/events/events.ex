@@ -5,9 +5,25 @@ defmodule Lani.Events do
 
   import Ecto.Query, warn: false
   alias Lani.Repo
-
   alias Lani.Events.Guide
+  alias Lani.Events.Category
 
+
+  def create_category(name) do
+    Repo.get_by(Category, name: name) || Repo.insert!(%Category{name: name})
+  end
+
+  def list_alphabetical_categories do
+    Category
+    |> Category.alphabetical()
+    |> Repo.all()
+  end
+
+  def get_category!(category_id), do: Repo.get!(Category, category_id)
+
+  def delete_category(%Category{} = category) do
+    Repo.delete(category)
+  end
   @doc """
   Returns the list of guides.
 

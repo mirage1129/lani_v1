@@ -1,15 +1,21 @@
-
 <section class="section">
   <div class="container">
-    <h1 class="title is-1 has-text-primary">Our Story</h1>
+    <div>
+    	<h1 class="title is-1 has-text-primary">Our Story</h1>
+   	</div>
+   	<br>
+   	<br>
    	<div>
-	    <h2 class="subtitle is-size-2">
-	      Lani was inspired by the real Lani, a friend we met when we first moved to Hong Kong.
+	    <h2 class="subtitle is-size-3">
+	      Lani was inspired by the real Lani, a friend we met upon moving to Hong Kong.
 	    </h2>
-	    <br>
+		</div>
+	  <br>
+	  <br>
+	  <div>
 			<h1 class="is-size-4">
-	     	She was a social butterfly who would organize amazing outings and invite all her friends to join. It was through Lani that we would meet our closest friends, see incredible parts of the city, and make memories we'd never forget. Years later, Lani left Hong Kong, and our social lives collapsed. We realized how rare of a person she was and were inspired to take action. We might not have our Lani in Hong Kong, but we could be Lani's for everyone else!
+	     	Lani was a social butterfly who would organize amazing outings and invite her friends to join. It was through her that we would meet our closest friends, see incredible parts of the city, and make memories we'd never forget. Years later, Lani left Hong Kong, and our social lives collapsed. We realized how rare of a person she was and were inspired to take action. We might not have our Lani anymore, but we could be Lani's for everyone else!
 	    </h1>
-  </div>
+  	</div>
   </div>
 </section>

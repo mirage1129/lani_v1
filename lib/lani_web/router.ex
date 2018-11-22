@@ -24,6 +24,11 @@ defmodule LaniWeb.Router do
     resources "/guides", GuideController
   end
 
+  scope "/admin", LaniWeb do
+    pipe_through :browser # Use the default browser stack
+    resources "/", AdminController, only: [:index, :delete]
+    
+  end
   # Other scopes may use custom stacks.
   # scope "/api", LaniWeb do
   #   pipe_through :api
