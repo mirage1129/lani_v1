@@ -10,7 +10,7 @@
     <label class="label">Role</label>
     <div class="control">
       <div class="select">
-        <%= select f, :role, ["admin": "admin","editor": "editor", "user": "user"], class: "form-control button" %>
+        <%= select f, :role, [admin: "admin", editor: "editor", user: "user"], class: "form-control button" %>
       </div>
     </div>
   </div>

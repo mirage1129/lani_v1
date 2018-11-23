@@ -32,12 +32,12 @@
         <%= if @current_user do %>
 
           <%= case @current_user.role do
-            "admin" -> link "Users", to: Routes.user_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold"
+            "admin" -> link "Users", to: Routes.admin_user_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold"
             _ -> ""
             end %>
 
           <%= case @current_user.role do
-            "admin" -> link "Admin", to: Routes.admin_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold"
+            "admin" -> link "Admin", to: Routes.admin_user_path(@conn, :index), class: "navbar-item has-text-primary has-text-weight-bold"
             _ -> ""
             end %>
         <% end %>              

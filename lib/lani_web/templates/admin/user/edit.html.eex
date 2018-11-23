@@ -6,7 +6,7 @@
 		    <strong>Name:</strong>
 		    <%= @user.name %>
 		  </li>
-		    <%= render "priviliges.html", Map.put(assigns, :action, Routes.user_path(@conn, :update, @user)) %>
+		    <%= render "priviliges.html", Map.put(assigns, :action, Routes.admin_user_path(@conn, :update, @user)) %>
 		</ul> 
   </div>
 </section>

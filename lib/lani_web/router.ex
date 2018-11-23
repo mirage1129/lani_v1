@@ -14,23 +14,22 @@ defmodule LaniWeb.Router do
     plug :accepts, ["json"]
   end
 
+  # guest zone
   scope "/", LaniWeb do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
     get "/about", PageController, :show
-    resources "/users", UserController
+    resources "/users", UserController, only: [:new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/guides", GuideController
   end
 
-  scope "/admin", LaniWeb do
-    pipe_through :browser # Use the default browser stack
-    resources "/", AdminController, only: [:index, :delete]
-    
+  # admin zone
+  scope "/admin", LaniWeb.Admin, as: :admin do
+    pipe_through [:browser]
+    resources "/users", UserController, only: [:index, :edit, :delete, :update, :show]
+    resources "/category", CategoryController
   end
-  # Other scopes may use custom stacks.
-  # scope "/api", LaniWeb do
-  #   pipe_through :api
-  # end
+
 end
