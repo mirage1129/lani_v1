@@ -2,6 +2,8 @@ defmodule LaniWeb.Admin.UserController do
   use LaniWeb, :controller
 
   alias Lani.Accounts
+  alias Lani.Events
+  alias Lani.Events.Guide
 
   def index(conn, _params) do
     users = Accounts.list_users()

@@ -4,6 +4,8 @@ defmodule LaniWeb.Admin.CategoryController do
   alias Lani.Events
   alias Lani.Events.Category
 
+
+
   def index(conn, _params) do
     categories = Events.list_categories()
     render(conn, "index.html", categories: categories)

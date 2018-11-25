@@ -42,12 +42,14 @@
             </tr>
           </thead>
           <tbody>
-            
-
-
-
-
-            
+            <%= for category <- @categories do %>
+              <tr>
+                <td><%= category.name %></td>
+                <td>
+                  <%= link "Delete", to: Routes.admin_category_path(@conn, :delete, category), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary" %>
+                </td>
+              </tr>
+            <% end %>
           </tbody>
         </table>
       </div>

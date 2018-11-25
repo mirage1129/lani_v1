@@ -28,6 +28,7 @@ defmodule LaniWeb.Router do
   # admin zone
   scope "/admin", LaniWeb.Admin, as: :admin do
     pipe_through [:browser]
+    resources "/", PageController, only: [:index]
     resources "/users", UserController, only: [:index, :edit, :delete, :update, :show]
     resources "/category", CategoryController
   end
