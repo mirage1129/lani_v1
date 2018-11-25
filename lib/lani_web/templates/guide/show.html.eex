@@ -41,10 +41,13 @@
       </article>
     </div>
   </div>
+  <%= if @current_user do %>
+      <div>
+        <%= case @current_user.role do
+          "admin" -> link "Edit", to: Routes.guide_path(@conn, :edit, @guide), class: "button is-primary is-focused"
+          "editor" -> link "Edit", to: Routes.guide_path(@conn, :edit, @guide), class: "button is-primary is-focused"
+          _ -> ""
+          end %>
+      </div>
+    <% end %> 
 </section>
-
-
-
-
-<span><%= link "Edit", to: Routes.guide_path(@conn, :edit, @guide) %></span>
-<span><%= link "Back", to: Routes.guide_path(@conn, :index) %></span>

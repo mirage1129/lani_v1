@@ -1,5 +1,10 @@
-<h2>Edit Guide</h2>
-
-<%= render "form.html", Map.put(assigns, :action, Routes.guide_path(@conn, :update, @guide)) %>
-
-<span><%= link "Back", to: Routes.guide_path(@conn, :index) %></span>
+<section class="section">
+  <div class="container">
+    <h1 class="title is-1 has-text-primary">Edit</h1>
+    <div class="columns">
+		  <div class="column is-4">
+				<%= render "form.html", Map.put(assigns, :action, Routes.guide_path(@conn, :update, @guide)) %>
+		  </div>
+		</div>
+  </div>
+</section>

@@ -20,7 +20,7 @@ defmodule LaniWeb.Router do
 
     get "/", PageController, :index
     get "/about", PageController, :show
-    resources "/users", UserController, only: [:new, :create]
+    resources "/users", UserController, only: [:new, :create, :show]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/guides", GuideController
   end
@@ -29,8 +29,8 @@ defmodule LaniWeb.Router do
   scope "/admin", LaniWeb.Admin, as: :admin do
     pipe_through [:browser]
     resources "/", PageController, only: [:index]
-    resources "/users", UserController, only: [:index, :edit, :delete, :update, :show]
-    resources "/category", CategoryController
+    resources "/users", UserController, only: [:edit, :update]
+    resources "/category", CategoryController, only: [:edit, :delete, :update, :new, :create]
   end
 
 end

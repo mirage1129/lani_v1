@@ -2,7 +2,6 @@ defmodule Lani.Accounts.Credential do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "credentials" do
     field :email, :string
     field :password, :string, virtual: true

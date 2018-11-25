@@ -7,7 +7,6 @@ defmodule Lani.Accounts do
   alias Lani.Repo
   alias Lani.Accounts.User
 
-
   def register_user(attrs \\ %{}) do 
     %User{}
     |> User.registration_changeset(attrs)

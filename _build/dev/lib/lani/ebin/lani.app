@@ -13,6 +13,8 @@
                         'Elixir.LaniWeb',
                         'Elixir.LaniWeb.Admin.CategoryController',
                         'Elixir.LaniWeb.Admin.CategoryView',
+                        'Elixir.LaniWeb.Admin.PageController',
+                        'Elixir.LaniWeb.Admin.PageView',
                         'Elixir.LaniWeb.Admin.UserController',
                         'Elixir.LaniWeb.Admin.UserView','Elixir.LaniWeb.Auth',
                         'Elixir.LaniWeb.CategoryView',

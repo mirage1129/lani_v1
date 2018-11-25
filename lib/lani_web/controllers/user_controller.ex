@@ -4,8 +4,6 @@ defmodule LaniWeb.UserController do
   alias Lani.Accounts
   alias Lani.Accounts.User
 
-  # plug :authenticate_admin when action in [:index, :show]
-
   def new(conn, _params) do
     changeset = Accounts.change_user(%User{})
     render(conn, "new.html", changeset: changeset)
@@ -22,4 +20,10 @@ defmodule LaniWeb.UserController do
         render(conn, "new.html", changeset: changeset)
     end
   end
+
+  def show(conn, %{"id" => id}) do
+    user = Accounts.get_user!(id)
+    render(conn, "show.html", user: user)
+  end
+  
 end

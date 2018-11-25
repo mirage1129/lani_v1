@@ -23,6 +23,14 @@
 
   <div class="field">
     <p class="control">
+      <%= label f, :category_id, "Category" %>
+      <br>
+      <%= select f, :category_id, category_select_options(@categories), class: "select" %>
+    </p>
+  </div> 
+
+  <div class="field">
+    <p class="control">
       <%= label f, :starting_location, class: "control-label" %>
       <%= text_input f, :starting_location, class: "form-control input" %>
       <%= error_tag f, :starting_location %>
@@ -40,7 +48,7 @@
   <div class="field">
     <p class="control">
       <%= label f, :cost, class: "control-label" %>
-      <%= text_input f, :cost, class: "form-control input" %>
+      <%= textarea f, :cost, class: "form-control textarea" %>
       <%= error_tag f, :cost %>
     </p>
   </div>
@@ -48,7 +56,7 @@
   <div class="field">
     <p class="control">
       <%= label f, :bring, class: "control-label" %>
-      <%= text_input f, :bring, class: "form-control input" %>
+      <%= textarea f, :bring, class: "form-control textarea" %>
       <%= error_tag f, :bring %>
     </p>
   </div>
@@ -56,7 +64,7 @@
   <div class="field">
     <p class="control">
       <%= label f, :intensity, class: "control-label" %>
-      <%= text_input f, :intensity, class: "form-control input" %>
+      <%= textarea f, :intensity, class: "form-control textarea" %>
       <%= error_tag f, :intensity %>
     </p>
   </div>

@@ -5,7 +5,12 @@ defmodule LaniWeb.GuideController do
   alias Lani.Events.Guide
 
   plug :authenticate_editor when action in [:new, :create, :edit, :update, :delete]
-  
+  plug :load_categories when action in [:new, :edit]
+
+  defp load_categories(conn, _) do
+    assign(conn, :categories, Events.list_alphabetical_categories())
+  end
+
   def index(conn, _params) do
     guides = Events.list_guides()
     render(conn, "index.html", guides: guides)

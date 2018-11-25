@@ -7,7 +7,7 @@
 		    <%= @user.name %>
 		  </li>
 		  <li>
-		    <strong>Role:</strong>
+		    <strong>Privilages:</strong>
 		    <%= @user.role %>
 		  </li>
 		</ul>

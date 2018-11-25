@@ -4,12 +4,7 @@ defmodule LaniWeb.Admin.CategoryController do
   alias Lani.Events
   alias Lani.Events.Category
 
-
-
-  def index(conn, _params) do
-    categories = Events.list_categories()
-    render(conn, "index.html", categories: categories)
-  end
+  plug :authenticate_admin when action in [:new, :create, :edit, :update, :delete]
 
   def new(conn, _params) do
     changeset = Events.change_category(%Category{})
@@ -21,15 +16,10 @@ defmodule LaniWeb.Admin.CategoryController do
       {:ok, category} ->
         conn
         |> put_flash(:info, "Category created successfully.")
-        |> redirect(to: Routes.admin_category_path(conn, :show, category))
+        |> redirect(to: Routes.admin_page_path(conn, :index))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
-  end
-
-  def show(conn, %{"id" => id}) do
-    category = Events.get_category!(id)
-    render(conn, "show.html", category: category)
   end
 
   def edit(conn, %{"id" => id}) do
@@ -45,7 +35,7 @@ defmodule LaniWeb.Admin.CategoryController do
       {:ok, category} ->
         conn
         |> put_flash(:info, "Category updated successfully.")
-        |> redirect(to: Routes.admin_category_path(conn, :show, category))
+        |> redirect(to: Routes.admin_page_path(conn, :index))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", category: category, changeset: changeset)
     end
@@ -59,4 +49,14 @@ defmodule LaniWeb.Admin.CategoryController do
     |> put_flash(:info, "Category deleted successfully.")
     |> redirect(to: Routes.admin_category_path(conn, :index))
   end
+
+  # def index(conn, _params) do
+  #   categories = Events.list_categories()
+  #   render(conn, "index.html", categories: categories)
+  # end
+  
+    # def show(conn, %{"id" => id}) do
+  #   category = Events.get_category!(id)
+  #   render(conn, "show.html", category: category)
+  # end
 end

@@ -41,8 +41,8 @@
       <%= if @current_user do %>
 
         <div class="navbar-end">
-          <div class="navbar-item has-text-primary has-text-weight-bold">
-            <%= @current_user.name %>
+          <div class="navbar-item">
+            <%= link @current_user.name, to: Routes.user_path(@conn, :show, @current_user), class: "navbar-item has-text-primary has-text-weight-bold" %>
           </div>
           <div class="navbar-item has-text-primary has-text-weight-bold">
             <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
