@@ -1,61 +1,77 @@
 <section class="section">
   
   <div class="container">
-    <h1 class="title is-1 has-text-primary">Guides</h1>
-
-    <%= if @current_user do %>
-      <div>
-        <%= case @current_user.role do
-          "admin" -> link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused"
-          "editor" -> link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused"
-          _ -> ""
-          end %>
+    <div class="columns">
+      <div class="column is-6">
+        <h1 class="title is-1 has-text-primary">Guides</h1>
       </div>
-    <% end %> 
-    
-    <br>
-  </div>
+      <div class="column">
 
-  <div class="container">
-    <div class="tile is-ancestor">
-      <div class="tile is-vertical">
-        <div class="tile">
-          <%= for guide <- @guides do %>
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child notification is-primary">
-                <a href="/guides/<%= guide.id %>">
-                  <p class="title"><%= guide.name %></p>
-                </a>
-                <br>
-                <figure class="image is-2by1">
-                  <a href="/guides/<%= guide.id %>">
-                    <img src="<%= guide.image_url %>" alt="Placeholder image">
-                  </a>
-                </figure>
-                <br>
+        <%= if @current_user do %>
+          <div>
+            <%= case @current_user.role do
+              "admin" -> link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused is-pulled-right"
+              "editor" -> link "New Guide", to: Routes.guide_path(@conn, :new), class: "button is-primary is-focused is-pulled-right"
+              _ -> ""
+              end %>
+          </div>
+        <% end %> 
 
-                <%= if @current_user do %>
-                  <span>
-                    <%= case @current_user.role do
-                      "admin" -> link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary is-inverted is-outlined"
-                      "editor" -> link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary is-inverted is-outlined"
-                      _ -> ""
-                      end %>
-                  </span>
-                  <span>
-                    <%= case @current_user.role do
-                      "admin" -> link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary is-inverted is-outlined"
-                      "editor" -> link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary is-inverted is-outlined"
-                      _ -> ""
-                      end %>
-                  </span>
-                <% end %> 
-              </article>
-            </div>
-          <% end %>
-        </div>
-      </div>      
+      </div>
     </div>
+  </div>
+</section>
+
+
+
+<section>
+  <div class="container">
+    <%= for category <- @categories do %>
+      <br>
+      <h1 class="title is-2 has-text-primary"><%= category.name %></h1>
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical">
+          <div class="tile">
+
+            <%= for guide <- @guides do %>
+              <div class="tile is-parent is-vertical">
+                <article class="tile is-child notification is-light">
+                  <a href="/guides/<%= guide.id %>">
+                    <h1 class="title is-4"><%= guide.name %>(<%= guide.category_id %>)</h1>
+                  </a>
+                  <br>
+                  <figure class="image is-2by1">
+                    <a href="/guides/<%= guide.id %>">
+                      <img src="<%= guide.image_url %>" alt="Placeholder image">
+                    </a>
+                  </figure>
+                  <br>
+
+                  <%= if @current_user do %>
+                    <span>
+                      <%= case @current_user.role do
+                        "admin" -> link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary"
+                        "editor" -> link "Edit", to: Routes.guide_path(@conn, :edit, guide), class: "button is-primary"
+                        _ -> ""
+                        end %>
+                    </span>
+                    <span>
+                      <%= case @current_user.role do
+                        "admin" -> link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary"
+                        "editor" -> link "Delete", to: Routes.guide_path(@conn, :delete, guide), method: :delete, data: [confirm: "Are you sure?"], class: "button is-primary"
+                        _ -> ""
+                        end %>
+                    </span>
+                  <% end %> 
+
+                </article>
+              </div>
+            <% end %>
+
+          </div>
+        </div>      
+      </div>
+    <% end  %>
   </div>
 </section>
 
