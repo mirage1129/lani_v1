@@ -2,7 +2,7 @@
 
 APP="lani"
 
-BUILD_HOST="104.248.146.100"
+BUILD_HOST="kunvince.com"
 BUILD_USER="deploy"
 BUILD_AT="/tmp/edeliver/$APP/builds"
 
@@ -15,7 +15,7 @@ GIT_CLEAN_PATHS="_build rel priv/static"
 # STAGING_USER="deploy"
 # TEST_AT="/home/deploy/staging"
 
-PRODUCTION_HOSTS="104.248.146.100"
+PRODUCTION_HOSTS="kunvince.com"
 PRODUCTION_USER="deploy"
 DELIVER_TO="/home/deploy"
 
