@@ -24,8 +24,5 @@ defmodule Lani.Events.Guide do
     |> cast(attrs, [:name, :description, :starting_location, :image_url, :cost, :bring, :intensity, :map_link, :category_id])
     |> validate_required([:name, :description, :starting_location, :image_url, :cost, :bring, :intensity, :map_link])
   end
-
-  # def categorical(query) do
-  #   from c in query, order_by: c.name
-  # end
+  
 end

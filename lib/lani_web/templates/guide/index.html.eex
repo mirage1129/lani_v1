@@ -37,7 +37,7 @@
               <div class="tile is-parent is-vertical">
                 <article class="tile is-child notification is-light">
                   <a href="/guides/<%= guide.id %>">
-                    <h1 class="title is-4"><%= guide.name %>(<%= guide.category_id %>)</h1>
+                    <h1 class="title is-4"><%= guide.name %>(<%= guide.category.name %>)</h1>
                   </a>
                   <br>
                   <figure class="image is-2by1">

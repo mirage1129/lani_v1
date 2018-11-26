@@ -13,6 +13,16 @@ defmodule Lani.Events do
     |> Repo.all()
   end
 
+
+  def list_guides_with_category(id) do
+    Guide
+    |> Repo.get(id)
+    |> Repo.preload(:category)
+    |> Repo.all()
+  end
+
+       
+
   @doc """
   Returns the list of guides.
 
@@ -23,7 +33,10 @@ defmodule Lani.Events do
 
   """
   def list_guides do
-    Repo.all(Guide)
+    # Repo.all(Guide)
+    Guide
+    |> Repo.all()
+    |> Repo.preload(:category)
   end
 
   @doc """

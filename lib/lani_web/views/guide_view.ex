@@ -7,8 +7,10 @@ defmodule LaniWeb.GuideView do
 		for category <- categories, do: {category.name, category.id}
 	end
 
-	def category_options(categories) do
-		for category <- categories, do: category.name
-	end
+
+		
+	# def category_options(categories) do
+	# 	for category <- categories, do: {category.name}
+	# end
 
 end
