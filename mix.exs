@@ -4,7 +4,7 @@ defmodule Lani.Mixfile do
   def project do
     [
       app: :lani,
-      version: "0.0.10",
+      version: "0.0.11",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -45,8 +45,8 @@ defmodule Lani.Mixfile do
       {:comeonin, "~> 4.1"},
       {:bcrypt_elixir, "~> 1.0"},
       {:pbkdf2_elixir, "~> 0.12"},
-      {:distillery, "~> 1.4"},
-      {:edeliver, "~> 1.4.2"}
+      {:distillery, "~> 1.5", runtime: false},
+      {:edeliver, "~> 1.5.0"}
     ]
   end
 
