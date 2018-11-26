@@ -44,7 +44,9 @@ defmodule Lani.Mixfile do
       {:plug_cowboy, "~> 1.0"},
       {:comeonin, "~> 4.1"},
       {:bcrypt_elixir, "~> 1.0"},
-      {:pbkdf2_elixir, "~> 0.12"}
+      {:pbkdf2_elixir, "~> 0.12"},
+      {:distillery, "~> 1.4"},
+      {:edeliver, "~> 1.4.2"}
     ]
   end
 

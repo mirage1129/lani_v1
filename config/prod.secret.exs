@@ -15,6 +15,9 @@ config :lani, LaniWeb.Endpoint,
 config :lani, Lani.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "Lanilans",
   database: "lani_prod",
+  hostname: "104.248.146.100",
+  # hostname could be kunvince.com
   pool_size: 15
+
